@@ -1,0 +1,8 @@
+site_name: Webconf service FAQ page
+docs_dir: ./
+
+pages:
+
+- FAQ: 'index.md'
+
+theme: readthedocs
