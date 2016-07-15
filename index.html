@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Webconf service manual pages</title>
+  <title>Webconf service FAQ page</title>
   
 
   <link rel="shortcut icon" href="./img/favicon.ico">
@@ -22,6 +22,9 @@
   <link href="./site/site/css/highlight.css" rel="stylesheet">
   <link href="./site/site/css/theme.css" rel="stylesheet">
   <link href="./site/site/css/theme_extra.css" rel="stylesheet">
+  <link href="./site/site/site/css/highlight.css" rel="stylesheet">
+  <link href="./site/site/site/css/theme.css" rel="stylesheet">
+  <link href="./site/site/site/css/theme_extra.css" rel="stylesheet">
 
   
   <script>
@@ -51,6 +54,15 @@
   <script src="./site/site/mkdocs/js/require.js"></script>
   <script src="./site/site/mkdocs/js/search.js"></script>
   <script src="./site/site/mkdocs/js/text.js"></script>
+  <script src="./site/site/site/js/highlight.pack.js"></script>
+  <script src="./site/site/site/js/jquery-2.1.1.min.js"></script>
+  <script src="./site/site/site/js/modernizr-2.8.3.min.js"></script>
+  <script src="./site/site/site/js/theme.js"></script>
+  <script src="./site/site/site/mkdocs/js/lunr-0.5.7.min.js"></script>
+  <script src="./site/site/site/mkdocs/js/mustache.min.js"></script>
+  <script src="./site/site/site/mkdocs/js/require.js"></script>
+  <script src="./site/site/site/mkdocs/js/search.js"></script>
+  <script src="./site/site/site/mkdocs/js/text.js"></script>
 
   
 </head>
@@ -62,7 +74,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> Webconf service manual pages</a>
+        <a href="." class="icon icon-home"> Webconf service FAQ page</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -75,18 +87,35 @@
           
             <li>
     <li class="toctree-l1 current">
-        <a class="current" href=".">Home</a>
+        <a class="current" href=".">FAQ</a>
         
             <ul>
             
+                <li class="toctree-l3"><a href="#_1">Διαμαρτύρεται χρήστης ότι έχει πρόβλημα να συνδεθεί στο δωμάτιο για το οποίο έχει λάβει πρόσκληση. Τί μπορώ να ελέγξω;</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_2">Διαμαρτύρεται χρήστης ότι ενώ είναι συνδεδεμένος, έχει διακοπές ή θόρυβο στον ήχο. Τί να ελέγξω;</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#logs">Πώς να ελέγξω πόσοι χρήστες συμμετέχουν σε ένα δωμάτιο; Πόσοι είναι συνδεδεμένοι αυτή τη στιγμή; Πώς θα δω στα logs αν προσπάθησαν;</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#bbb-server-node">Υπάρχει διαπιστωμένο πρόβλημα σε συγκεκριμένο δωμάτιο τηλεδιάσκεψης. Πώς δίνω οδηγίες για μεταφορά του σε νέο bbb server node;</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#video-bbb-server-nodes">Συντονιστής δωματίου δεν μπορεί να βρει video που πιστεύει ότι έπρεπε να έχει καταγραφεί. Πώς ελέγχω όλα τα bbb server nodes για την ύπαρξή του;</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#server-nodes">Πώς ελέγχω ότι όλα τα ζευγάρια server nodes είναι σε καλή λειτουργία;</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#server-nodes_1">Πώς βγάζω ένα ζεύγος server nodes εκτός λειτουργίας; Είτε για συντήρηση είτε γιατί διαπιστώθηκε πρόβλημα στη λειτουργία του.</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#server-nodes_2">Πότε αποφασίζω να προσθέσω ένα νέο ζεύγος server nodes εντός λειτουργίας και ποιά είναι η διαδικασία που πρέπει να ακολουθήσω;</a></li>
+                
+            
             </ul>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="faq/">FAQ</a>
         
     </li>
 <li>
@@ -101,7 +130,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">Webconf service manual pages</a>
+        <a href=".">Webconf service FAQ page</a>
       </nav>
 
       
@@ -113,7 +142,7 @@
     
       
     
-    <li>Home</li>
+    <li>FAQ</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -123,18 +152,88 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="_1">Διαμαρτύρεται χρήστης ότι έχει πρόβλημα να συνδεθεί στο δωμάτιο για το οποίο έχει λάβει πρόσκληση. Τί μπορώ να ελέγξω;</h1>
+<p>Το πρώτο σημείο στο οποίο παραπέμπουμε το χρήστη είναι η <a href="https://webconf.grnet.gr/help">σελίδα Βοήθειας</a> του ιστοχώρου.
+Στη συνέχεια τον παροτρύνουμε να χρησιμοποιήσει το εργαλείο <a href="http://webconf-bbb3.grnet.gr/check/">Έλεγχος Σύνδεσης</a> και να μας στείλει τα αποτελέσματα του ελέγχου πατώντας στο κουμπί <code>mail</code>. Βάσει των αποτελεσμάτων κρίνουμε αν το πρόβλημα είναι δικτυακό (ping delay, εύρος ζώνης), θέμα browser (αποφεύγουμε IE, προτείνουμε FF / Chrome), θέμα flash player ή θέμα java (απενεργοποιημένη σε FF / Chrome).</p>
+<h1 id="_2">Διαμαρτύρεται χρήστης ότι ενώ είναι συνδεδεμένος, έχει διακοπές ή θόρυβο στον ήχο. Τί να ελέγξω;</h1>
+<p>Ρωτάμε το χρήστη ποιο browsers χρησιμοποιεί. Αν είναι IE (και άρα Flash για τον ήχο) τον παροτρύνουμε να χρησιμοποιήσει FF / Chrome για WebRTC ήχο.</p>
+<p>Ρωτάμε το χρήστη να μας πει το φόρτου της μηχανής του (Ctrl+Shift+Esc, CPU Usage). Αν είναι υψηλός  του λέμε να κλείσει όλες τις άλλες εφαρμογές ώστε να χαμηλώσει ο φόρτος.</p>
+<p>Ρωτάμε το χρήστη αν είναι συνδεδεμένες ενσύρματα ή ασύρματα, προτείνουμε ενσύρματα και αν είναι συνδεδεμένος ασύρματα  ελέγχουμε, μέσω της αντίστοιχης εφαρμογής του λειτουργικού συστήματός του, την ποιότητα της σύνδεσης και τον ρωτάμε πόσοι ακόμα είναι συνδεδεμένοι στο ασύρματο δίκτυό του και τί χρήση κάνουν. Ανάλογα των απαντήσεων προτείνουμε λύσεις όπως περιορισμού των συνδεδεμένων υπολοίπων χρηστών / συσκευών και περιορισμού της χρήσης του δικτύου από τους υπόλοιπους συνδεδεμένους χρήστες.</p>
+<h1 id="logs">Πώς να ελέγξω πόσοι χρήστες συμμετέχουν σε ένα δωμάτιο; Πόσοι είναι συνδεδεμένοι αυτή τη στιγμή; Πώς θα δω στα logs αν προσπάθησαν;</h1>
+<p>Στο μενού διαχειριστή του portal, επιλέγοντας ζωντανά δωμάτια και πατώντας το εικονίδιο "Δείτε τους συνδεμένους χρήστες" εμφανίζονται τα ονόματα, ο ρόλος και σύνολο τρεχόντων συμμετεχόντων. Μπορούμε να ελέγξουμε την επιτυχία ή αποτυχία σύνδεσης ενός συμμετέχοντα κάνοντας σύνδεση στη κονσόλα του bbb server που λαμβάνει χώρα το δωμάτιο (εμφανίζεται στο portal για τους διαχειριστές στο πεδίο "Τελευταίος server") και ελέγχοντας το αρχείο <code>/var/log/bigbluebutton/bbb-web.log</code>.</p>
+<h1 id="bbb-server-node">Υπάρχει διαπιστωμένο πρόβλημα σε συγκεκριμένο δωμάτιο τηλεδιάσκεψης. Πώς δίνω οδηγίες για μεταφορά του σε νέο bbb server node;</h1>
+<p>Ενημερώνω τους χρήστες να αποσυνδεθούν από το δωμάτιο και να περιμένουν να κλείσει, δηλαδή να μην εμφανίζεται η ένδειξη "Σε εξέλιξη!". Αφαιρούμε το bbb server node από τη συστοιχία και ο επόμενος χρήστης που θα συνδεθεί στο δωμάτιο θα βρίσκεται πλέον σε νέο bbb server node.</p>
+<h1 id="video-bbb-server-nodes">Συντονιστής δωματίου δεν μπορεί να βρει video που πιστεύει ότι έπρεπε να έχει καταγραφεί. Πώς ελέγχω όλα τα bbb server nodes για την ύπαρξή του;</h1>
+<p>Από τη βάση, στον πίνακα rooms βρίσκουμε το BigBlueButton meeting id του δωματίου (πεδίο <code>bbb_meeting_id</code>) και από τον πίνακα meetings βρίσκουμε σε ποιόν bbb server node έλαβε χώρα το meeting τη χρονική στιγμή που μας έχει αναφέρει ο χρήστης. Στη συνέχεια συνδεόμαστε στον bbb server node που εντοπίσαμε και από το output της εντολής <code>bbb-record --list</code> ελέγχοντας το πεδίο External <code>MeetingID</code>, που θα πρέπει να ισούται με το <code>bbb_meeting_id</code> του δωματίου, και την ώρα της καταγραφής κρατάμε αντίστοιχο το Internal MeetingID. Έπειτα με αυτό το ID ελέγχουμε τα log αρχεία για τα δύο πρώτα στάδια της επεξεργασίας της καταγραφής (archive και sanity), που λαμβάνουν χώρα στον bbb server node, για σφάλματα. </p>
+<p>Τα αρχεία είναι:</p>
+<ul>
+<li><code>/var/log/bigbluebutton/archive-[Internal MeetingID].log</code> και</li>
+<li><code>/var/log/bigbluebutton/sanity.log</code></li>
+</ul>
+<p>Αν τα δύο αυτά στάδια έχουν ολοκληρωθεί με επιτυχία συνδεόμαστε στο αντίστοιχο transocoding server του ζευγαριού για να ελέγξουμε για σφάλματα στα δύο επόμενα στάδια της επεξεργασίας της καταγραφής (process και publish). Τα αρχεία που σχετίζονται είναι τα:</p>
+<ul>
+<li><code>/var/log/bigbluebutton/presentation/process-[Internal MeetingID].log</code> και</li>
+<li><code>/var/log/bigbluebutton/presentation/process-[Internal MeetingID].log</code></li>
+</ul>
+<p>Τα logs για το post publish στάδιο της επεξεργασίας της καταγραφής, δηλαδή της παραγωγής του download αρχείου, βρίσκονται στον transcoding server στη διαδρομή <code>/var/log/bigbluebutton/download/[Internal MeetingID].log</code>.</p>
+<p>Ενώ οι καταγραφές του daemon service που εκτελεί το κάθε στάδιο βρίσκονται και στους δύο server στη διαδρομή <code>/var/log/bigbluebutton/bbb-rap-worker.log</code>.</p>
+<h1 id="server-nodes">Πώς ελέγχω ότι όλα τα ζευγάρια server nodes είναι σε καλή λειτουργία;</h1>
+<p>Διατίθεται εργαλείο αυτό-ελέγχου του BigBlueButton από την κονσόλα με χρήση της εντολής <code>bbb-conf --check</code> ως χρήστης root.
+Όσον αφορά τους transcoding server θα πρέπει να ελεγχθεί ότι το service monit (<code>/var/log/monit.log</code>) εκτελεί με επιτυχία το script επεξεργασίας των καταγραφών (<code>/usr/local/bigbluebutton/core/scripts/rap-worker.rb</code>) και ότι στο αρχείο καταγραφής αυτού <code>/var/log/bigbluebutton/rap-worker.log</code> δεν υπάρχουν σφάλματα.</p>
+<h1 id="server-nodes_1">Πώς βγάζω ένα ζεύγος server nodes εκτός λειτουργίας; Είτε για συντήρηση είτε γιατί διαπιστώθηκε πρόβλημα στη λειτουργία του.</h1>
+<p>Από τη βάση δεδομένων του συστήματος, αλλάγω την τιμή online σε μηδέν (<code>0</code>) στον πίνακα bbb-servers για το ζεύγος που επιθυμώ να θέσω offline (εκτός λειτουργίας). Εφόσον ολοκληρωθούν οι εργασίες συντήρησης το θέτω και πάλι εντός λειτουργίας (online) αλλάζοντας τη τιμή σε μονάδα (<code>1</code>). </p>
+<h1 id="server-nodes_2">Πότε αποφασίζω να προσθέσω ένα νέο ζεύγος server nodes εντός λειτουργίας και ποιά είναι η διαδικασία που πρέπει να ακολουθήσω;</h1>
+<p>Όταν και εφόσον παρατηρήσω ως διαχειριστής ότι στην υφιστάμενη υποδομή ο αριθμός των ταυτόχρονων τηλεδιασκέψεων είναι 4πλάσιος ή και μεγαλύτερος του αριθμού των BigBlueButton εξυπηρετητών. Έτσι, π.χ. για μία υποδομή που απαρτίζεται από συνολικά 4 BigBlueButton κόμβους θα πρέπει να αποφασίσω ότι χρειάζεται να προσθέσω νέο ζεύγος BigBlueButton &amp; Trasncoding κόμβων εφόσον παρατηρώ ότι σε καθημερινή βάση πραγματοποιούνται περισσότερες από 16 τηλεδιασκέψεις ταυτόχρονα. </p>
+<p>Θα χρειαστεί πριν από όλα να αιτηθώ την παροχή 2 νέων εικονικών μηχανών (VM) στην υπηρεσία ViMa της ΕΔΕΤ. Τα προτεινόμενα specs είναι τα εξής:</p>
+<p>BigBlueButton host:</p>
+<ul>
+<li>CPUs: 4</li>
+<li>Memory: 4GB</li>
+<li>Disk: 50GB</li>
+<li>OS: Ubuntu LTS</li>
+<li>Όνομα: webconf-bbb<code>X</code>.grnet.gr, όπου <code>Χ</code> είναι ο επόμενος διαθέσιμος αύξοντας αριθμός (π.χ. <code>5</code>)</li>
+</ul>
+<p>Transcoding host:</p>
+<ul>
+<li>CPUs: 2</li>
+<li>Memory: 2GB</li>
+<li>Disk: 5GB</li>
+<li>OS: Ubuntu LTS</li>
+<li>Όνομα: webconf-trans<code>X</code>.grnet.gr, όπου <code>Χ</code> είναι ο επόμενος διαθέσιμος αύξοντας αριθμός (π.χ. <code>5</code>)</li>
+</ul>
+<p>κατά την υποβολή της αίτησης προς τους διαχειριστές της υπηρεσίας ViMa της ΕΔΕΤ προσθέτουμε το εξής σχόλιο:</p>
+<pre><code>Θα επιθυμούσαμε το νέο VM να καταχωρηθεί σε public DNS και να έχει δυνατότητα σύνδεσης στο vlan318.
+</code></pre>
+
+<p>έτσι ώστε να υπάρχει η δυνατότητα απόδοσης εσωτερικών διευθύνσεων IP.</p>
+<p>Εφόσον μας έχουνε παραχωρηθεί τα νέα VMs θα χρειαστεί να προστεθούν στο αρχείο inventory μέσα στο Ansible . Παράλληλα θα πρέπει να ορίσουμε τις μεταβλητές storage_path, internal_ip και  my_pair_bbb κατάλληλα. Έτσι, εάν έχουμε αιτηθεί για ένα νέο ζεύγος κόμβων με ονόματα webconf-bbb5.grnet.gr και webconf-trans5.grnet.gr θα πρέπει αυτά να καταχωρηθούν αντίστοιχα κάτω από τα groups bigbluebutton και transcoding ως εξής:</p>
+<pre><code>[bigbluebutton]
+…
+webconf-bbb5.grnet.gr storage_path=5 internal_ip=172.16.0.Y #(όπου 0&lt;Υ&lt;255)
+
+[transcoding]
+…
+Webconf-trans5.grnet.gr storage_path=5 my_pair_bbb=webconf-bbb5.grnet.gr internal_ip=172.16.0.Z #(όπου 0&lt;Z&lt;255)
+
+</code></pre>
+
+<p>ΠΡΟΣΟΧΗ: Κατά την προσθήκη θα χρειαστεί να αποδοθεί σε κάθε νέο VM και μία εσωτερική IP (μέσω της μεταβλητής internal_ip), οπότε απαιτείται προσοχή ώστε να μην ανατεθεί σε κάποιον host IP που χρησιμοποιείται ήδη από άλλο VM της υποδομής.</p>
+<p>Έπειτα τα βήματα για τη διαμόρφωση του νέου ζεύγους είναι τα εξής:</p>
+<p>1) Προσθήκη ssh κλειδιών διαχειριστών:</p>
+<pre><code>$ ansible-playbook -v bootstrap.yml
+</code></pre>
+
+<p>2) Έλεγχος ότι τα νέα VMs έχουν ενταχθεί σωστά στο Ansible:</p>
+<pre><code>$ ansible -m ping -s bbb
+</code></pre>
+
+<p>3) Διαμόρφωση του νέου ζεύγους:</p>
+<pre><code>$ ansible-playbook -f 1 -v deploy.yml
+</code></pre>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="faq/" class="btn btn-neutral float-right" title="FAQ"/>Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-    </div>
   
 
   <hr/>
@@ -159,8 +258,6 @@
       
       
       
-        <span style="margin-left: 15px"><a href="faq/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
     </span>
 </div>
 
@@ -169,5 +266,5 @@
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2016-07-14 14:43:05.760447
+Build Date UTC : 2016-07-15 09:19:35.421813
 -->
